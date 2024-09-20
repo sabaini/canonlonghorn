@@ -1,0 +1,46 @@
+csi:
+  kubeletRootDir: /var/snap/microk8s/common/var/lib/kubelet
+
+image:
+  longhorn:
+    engine:
+      repository: ghcr.io/canonical/longhorn-engine
+      tag: v1.7.0-ck4
+    manager:
+      repository: ghcr.io/canonical/longhorn-manager
+      tag: v1.7.0-ck4
+    ui:
+      repository: ghcr.io/canonical/longhorn-ui
+      tag: v1.7.0-ck4
+    instanceManager:
+      repository: ghcr.io/canonical/longhorn-instance-manager
+      tag: v1.7.0-ck4
+    shareManager:
+      repository: ghcr.io/canonical/longhorn-share-manager
+      tag: v1.7.0-ck4
+    backingImageManager:
+      repository: ghcr.io/canonical/backing-image-manager
+      tag: v1.7.0-ck4
+    supportBundleKit:
+      repository: ghcr.io/canonical/support-bundle-kit
+      tag: v1.7.0-ck4
+
+  csi:
+    attacher:
+      repository: ghcr.io/canonical/csi-attacher
+      tag: 4.6.1-ck5
+    provisioner:
+      repository: ghcr.io/canonical/csi-provisioner
+      tag: 4.0.1-ck4
+    nodeDriverRegistrar:
+      repository: ghcr.io/canonical/csi-node-driver-registrar
+      tag: 2.11.1-ck3
+    resizer:
+      repository: ghcr.io/canonical/csi-resizer
+      tag: 1.11.1-ck1
+    snapshotter:
+      repository: ghcr.io/canonical/csi-snapshotter
+      tag: 7.0.2-ck2
+    livenessProbe:
+      repository: ghcr.io/canonical/livenessprobe
+      tag: 2.13.1-ck0 

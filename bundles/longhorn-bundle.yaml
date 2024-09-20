@@ -1,0 +1,28 @@
+base: jammy
+applications:
+  microk8s:
+    #charm: ./microk8s.charm
+    charm: microk8s
+    channel: 1.28/stable
+    num_units: 3
+    to:
+    - "0"
+    - "1"
+    - "2"
+    options:
+      #addons: "storage dns:10.245.160.2"
+      #addons: dns hostpath-storage helm
+      #containerd_http_proxy: "http://squid.internal:3128"
+      #containerd_https_proxy: "http://squid.internal:3128"
+      #containerd_no_proxy: "10.0.0.0/8,192.168.0.0/16,127.0.0.1,172.16.0.0/16"
+      #containerd_custom_registries: |
+      #  [{"url": "http://10.245.167.25:8082"},
+      #   {"url": "http://10.245.166.36:8082"}]
+    constraints: arch=amd64 cpu-cores=4 mem=3G virt-type=virtual-machine root-disk=32G
+machines:
+  "0":
+    constraints: arch=amd64 cpu-cores=4 mem=3G virt-type=virtual-machine root-disk=32G
+  "1":
+    constraints: arch=amd64 cpu-cores=4 mem=3G virt-type=virtual-machine root-disk=32G
+  "2":
+    constraints: arch=amd64 cpu-cores=4 mem=3G virt-type=virtual-machine root-disk=32G
